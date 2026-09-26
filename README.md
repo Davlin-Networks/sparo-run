@@ -127,8 +127,7 @@ searching GitHub for ISP billing, MikroTik hotspot billing or M-Pesa billing
 can find it.
 
 **Where is the documentation?**
-[docs.ispninja.co.ke](https://docs.ispninja.co.ke) - ISP Ninja was the
-product's earlier name; the docs domain is still live.
+[docs.sparo.run](https://docs.sparo.run) 
 
 ---
 
