@@ -7,7 +7,7 @@ SMS alerts, and an Android app - in one hosted dashboard.
 - Website: [sparo.run/products/isp-billing](https://sparo.run/products/isp-billing)
 - Open the app: [app.sparo.run](https://app.sparo.run/login)
 - Android app: [app.sparo.run/android-app](https://app.sparo.run/android-app)
-- Documentation: [docs.ispninja.co.ke](https://docs.ispninja.co.ke)
+- Documentation: [docs.sparo.run](https://docs.sparo.run)
 - Blog: [sparo.run/blog](https://sparo.run/blog)
 
 > This repository is the public home of Sparo ISP Billing on GitHub. The
@@ -31,12 +31,18 @@ at the ISP touching a router.
   account and the service is enabled in seconds, at 11 pm on a Sunday too.
 - **PPPoE billing** - monthly packages, scheduled expiry, reminders before the
   internet stops, and reconnection the moment a payment lands.
-- **Hotspot billing** - pay-as-you-go packages by the hour, day, week or month.
+- **Hotspot billing** - pay-as-you-go packages by the hour, day, week or month,
+  or by data allowance.
 - **Hotspot vouchers** - printable voucher batches for agents, redemption
   tracking and end-of-day reconciliation, so you know what each agent owes.
 - **Payment gateways** - your own Safaricom Daraja paybill, KCB Buni, or TUMA,
   which settles hotspot payments straight into your bank account. Your money
   never sits in our account.
+- **Subscriber wallet** (optional) - an overpayment, or a payment made before
+  the plan is due, is kept as credit instead of lost, and can pay for the next
+  renewal.
+- **Self-service renewal portal** - PPPoE customers check their plan and pay
+  from a branded page, and QR stickers on the router take them straight to it.
 - **Revenue reports** - real-time collections, subscriber and voucher reports,
   so hotspot revenue is a number you trust rather than an estimate.
 
@@ -52,6 +58,15 @@ at the ISP touching a router.
 - **Router health and backups** - uptime and downtime alerts, configuration
   backups you can download, WebFig access from the dashboard.
 - **Live sessions** - who is online, on which router, since when, using how much.
+- **One login, one connection** - each PPPoE account can be online on only one
+  of your routers at a time, so a shared username and password does not become
+  a second, unbilled customer.
+- **Fair usage policy** - "unlimited" packages can slow a heavy user down after
+  a set amount of data, without disconnecting them, and restore full speed when
+  the next window starts.
+- **Free-internet app detection** - hotspot devices using DNS tunnelling apps
+  (HTTP Injector, SlowDNS) to get online without paying are flagged on the
+  router.
 
 ### Running the business
 
@@ -61,6 +76,12 @@ at the ISP touching a router.
   activations and reports from the tower or the road.
 - **Branded hotspot portal** - your name and colours on the login page, with an
   optional ads and cross-sell carousel.
+- **Network map** - routers and subscriber installs on a map, with each site's
+  details a tap away.
+- **Tenant API** - a REST API with scoped tokens you create in the dashboard:
+  read subscribers, plans, payments and routers, and start an M-Pesa checkout
+  for a subscriber, so you can build your own customer app or connect your own
+  systems.
 - **Assisted setup** - we connect your routers, configure billing and payment
   workflows, and bring your existing subscribers into the system.
 
@@ -126,8 +147,20 @@ No. Sparo ISP Billing is a hosted service. This repository exists so operators
 searching GitHub for ISP billing, MikroTik hotspot billing or M-Pesa billing
 can find it.
 
+**Can a customer share their PPPoE login with a neighbour?**
+Not at the same time. Each PPPoE account is limited to one session across all
+your routers, enforced by RADIUS, so a second router using the same username
+and password is refused. See
+[PPPoE account sharing](https://sparo.run/blog/stop-pppoe-account-sharing).
+
+**Can people get free internet on my hotspot with tunnel apps?**
+Apps like HTTP Injector and SlowDNS hide traffic inside DNS lookups, which every
+captive portal has to allow before payment. Sparo adds rules to each hotspot
+router that flag devices doing it. See
+[Free internet apps on your hotspot](https://sparo.run/blog/free-internet-apps-dns-tunnelling-hotspot).
+
 **Where is the documentation?**
-[docs.sparo.run](https://docs.sparo.run) 
+[docs.sparo.run](https://docs.sparo.run)
 
 ---
 
@@ -140,6 +173,8 @@ can find it.
 - [What is FreeRADIUS and why does an ISP need it?](https://sparo.run/blog/what-is-freeradius-and-why-does-an-isp-need-it)
 - [Hotspot voucher management: where does the money go?](https://sparo.run/blog/hotspot-voucher-management-where-does-the-money-go)
 - [Manage MikroTik routers remotely, behind CGNAT](https://sparo.run/blog/manage-mikrotik-routers-remotely)
+- [Free internet apps on your hotspot: what DNS tunnelling is and how to spot it](https://sparo.run/blog/free-internet-apps-dns-tunnelling-hotspot)
+- [PPPoE account sharing: stopping one login from running two connections](https://sparo.run/blog/stop-pppoe-account-sharing)
 
 ---
 
