@@ -1,7 +1,7 @@
 # Sparo ISP Billing
 
 **ISP billing software for internet providers in Africa.** PPPoE and hotspot
-billing, M-Pesa auto-activation, MikroTik and FreeRADIUS control, WhatsApp and
+billing, M-Pesa auto-activation, MikroTik and RADIUS control, WhatsApp and
 SMS alerts, and an Android app - in one hosted dashboard.
 
 - Website: [sparo.run/products/isp-billing](https://sparo.run/products/isp-billing)
@@ -50,9 +50,9 @@ at the ISP touching a router.
 
 - **MikroTik RouterOS** - hotspot and PPPoE, connected over the API or through
   RADIUS, with a setup wizard for new routers.
-- **FreeRADIUS with CoA** - authentication, accounting, and Change-of-Authorization
+- **RADIUS with CoA** - authentication, accounting, and Change-of-Authorization
   so a package change or expiry takes effect immediately, no reboot.
-- **Routers behind CGNAT** - a managed WireGuard tunnel reaches routers without
+- **Routers behind CGNAT** - a managed secure tunnel reaches routers without
   a public IP. No port forwarding, no static IP from the upstream.
 - **Multi-router** - one dashboard for every site.
 - **Router health and backups** - uptime and downtime alerts, configuration
@@ -123,8 +123,8 @@ If you are still on a spreadsheet, start with
 ## Frequently asked questions
 
 **Which routers does it work with?**
-MikroTik RouterOS, connected over the API or through FreeRADIUS. Hotspot and
-PPPoE are both supported, and WireGuard tunnels reach routers behind CGNAT.
+MikroTik RouterOS, connected over the API and through RADIUS. Hotspot and
+PPPoE are both supported, and a secure tunnel reaches routers behind CGNAT.
 
 **How do M-Pesa payments work?**
 Subscribers pay via STK push or paybill. The payment is matched to the account
@@ -133,7 +133,7 @@ paybill through Safaricom Daraja, KCB Buni, or TUMA.
 
 **Does it work outside Kenya?**
 The platform is built for African ISPs. M-Pesa is the first payment rail;
-MikroTik, FreeRADIUS, vouchers, SMS and WhatsApp work anywhere. Ask us about
+MikroTik, RADIUS, vouchers, SMS and WhatsApp work anywhere. Ask us about
 your market at sales@sparo.run.
 
 **Is there a free trial?**
@@ -170,7 +170,7 @@ router that flag devices doing it. See
 - [How much does ISP billing software cost?](https://sparo.run/blog/isp-billing-software-cost-kenya)
 - [From M-Pesa payment to internet access: what happens in between](https://sparo.run/blog/from-mpesa-payment-to-internet-access)
 - [PPPoE vs hotspot: which should your ISP use?](https://sparo.run/blog/pppoe-vs-hotspot-which-should-your-isp-use)
-- [What is FreeRADIUS and why does an ISP need it?](https://sparo.run/blog/what-is-freeradius-and-why-does-an-isp-need-it)
+- [What is RADIUS and why does an ISP need it?](https://sparo.run/blog/what-is-freeradius-and-why-does-an-isp-need-it)
 - [Hotspot voucher management: where does the money go?](https://sparo.run/blog/hotspot-voucher-management-where-does-the-money-go)
 - [Manage MikroTik routers remotely, behind CGNAT](https://sparo.run/blog/manage-mikrotik-routers-remotely)
 - [Free internet apps on your hotspot: what DNS tunnelling is and how to spot it](https://sparo.run/blog/free-internet-apps-dns-tunnelling-hotspot)
