@@ -2,11 +2,14 @@
 
 **ISP billing software for internet providers in Africa.** PPPoE and hotspot
 billing, M-Pesa auto-activation, MikroTik and RADIUS control, WhatsApp and
-SMS alerts, and an Android app - in one hosted dashboard.
+SMS alerts, a customer app in your name, and remote management of your
+customers' fibre routers - in one hosted dashboard.
 
 - Website: [sparo.run/products/isp-billing](https://sparo.run/products/isp-billing)
 - Open the app: [app.sparo.run](https://app.sparo.run/login)
-- Android app: [app.sparo.run/android-app](https://app.sparo.run/android-app)
+- Android app for operators: [app.sparo.run/android-app](https://app.sparo.run/android-app)
+- My ISP, the customer app: [sparo.run/products/my-isp](https://sparo.run/products/my-isp)
+- Sparo CPE, customer router management: [sparo.run/products/sparo-ops](https://sparo.run/products/sparo-ops)
 - Documentation: [docs.sparo.run](https://docs.sparo.run)
 - Blog: [sparo.run/blog](https://sparo.run/blog)
 
@@ -14,7 +17,7 @@ SMS alerts, and an Android app - in one hosted dashboard.
 > product is a hosted service; its source code is not published here. Use this
 > page for an overview, pricing, the FAQ and links.
 
-**30-day free trial. No card required.** → [Start free](https://app.sparo.run/login)
+**14-day free trial. No card required.** → [Start free](https://app.sparo.run/login)
 
 ---
 
@@ -33,6 +36,8 @@ at the ISP touching a router.
   internet stops, and reconnection the moment a payment lands.
 - **Hotspot billing** - pay-as-you-go packages by the hour, day, week or month,
   or by data allowance.
+- **Night bundles** - cheap overnight hotspot packages that only work in the
+  hours you choose, so they never eat into daytime sales.
 - **Hotspot vouchers** - printable voucher batches for agents, redemption
   tracking and end-of-day reconciliation, so you know what each agent owes.
 - **Payment gateways** - your own Safaricom Daraja paybill, KCB Buni, or TUMA,
@@ -43,6 +48,8 @@ at the ISP touching a router.
   renewal.
 - **Self-service renewal portal** - PPPoE customers check their plan and pay
   from a branded page, and QR stickers on the router take them straight to it.
+- **Outage compensation** - after an outage, give affected customers their
+  lost time back in one step, instead of arguing it out account by account.
 - **Revenue reports** - real-time collections, subscriber and voucher reports,
   so hotspot revenue is a number you trust rather than an estimate.
 
@@ -68,14 +75,40 @@ at the ISP touching a router.
   (HTTP Injector, SlowDNS) to get online without paying are flagged on the
   router.
 
+### Customer routers (TR-069 add-on)
+
+Your customers' fibre routers report to Sparo over TR-069, so your team can
+see what is happening in the home without a site visit.
+
+- **Why is this customer offline?** - each router's fibre signal, PPPoE
+  session, WiFi and connected devices beside the customer's account, with one
+  plain answer: fibre fault, no power, not dialling, or an expired account.
+- **Network health** - how many routers are online, which have gone quiet, and
+  watch lists for weak fibre signal and lines that keep dropping.
+- **Remote actions** - reboot a router, or change its WiFi name and password
+  while the customer is on the phone. The new password is shown once and never
+  stored.
+- **Install by scanning** - technicians scan the serial on the router's label
+  and it links to the right customer.
+- **On the web and in Sparo CPE** - the Customer Routers page and map in the
+  dashboard, and the Sparo CPE Android app for field staff, with fingerprint
+  log-in.
+
 ### Running the business
 
 - **WhatsApp and SMS notifications** - expiry reminders, payment receipts,
   downtime alerts, in the channels subscribers actually read.
 - **Android app for operators** - the same account as the web dashboard, for
   activations and reports from the tower or the road.
-- **Branded hotspot portal** - your name and colours on the login page, with an
-  optional ads and cross-sell carousel.
+- **My ISP, the customer app** - an Android app for your PPPoE customers in your
+  name and colours: days left, M-Pesa renewal, usage, receipts, your
+  promotions, and support requests that read like a chat, with a notification
+  when you reply.
+- **Branded portals** - your name and colours on the hotspot login page and
+  the PPPoE renewal portal, optionally on your own domain, with an ads and
+  cross-sell carousel.
+- **Team roles** - give each member of staff only what their job needs, with
+  your own custom roles.
 - **Network map** - routers and subscriber installs on a map, with each site's
   details a tap away.
 - **Tenant API** - a REST API with scoped tokens you create in the dashboard:
@@ -95,13 +128,22 @@ USD.
 
 | Plan | Hotspot commission | Per active PPPoE account | Minimum | Limits |
 |------|-------------------:|-------------------------:|--------:|--------|
-| **Starter** | 4% | $0.25 / month | none | 2 routers, 50 PPPoE accounts |
-| **Growth** (most popular) | 2.5% | $0.20 / month | none | unlimited routers and subscribers |
-| **Scale** | 1.5% | $0.15 / month | $20 / month | 20 routers, 1,500 PPPoE accounts, priority support, branded portal |
+| **Starter** | 3% | $0.20 / month | none | 2 routers, 50 PPPoE accounts, the customer app |
+| **Growth** (most popular) | 2.5% | $0.15 / month | none | 5 routers, 400 PPPoE accounts, promotions in the customer app, custom team roles |
+| **Scale** | 2% | $0.12 / month | $20 / month | 20 routers, 1,500 PPPoE accounts, your own portal domain, priority support |
 
-Every plan starts with a **30-day free trial** and no card. After the trial
+Every plan starts with a **14-day free trial** and no card. After the trial
 there is a one-time **$8 activation fee**, which covers connecting your routers
-and importing your subscribers. Current figures are always on the
+and importing your subscribers.
+
+**Dedicated** - for ISPs with 500 or more subscribers who want their own
+servers: from $60 a month plus a banded fee per subscriber, 15% off yearly.
+Work it out with the calculator on the product page.
+
+**Customer router management (TR-069 add-on)** - from KES 500 a month for up
+to 100 customer routers, then KES 5 per extra router. First month free.
+
+Current figures are always on the
 [pricing section of the product page](https://sparo.run/products/isp-billing#pricing).
 
 ---
@@ -123,8 +165,10 @@ If you are still on a spreadsheet, start with
 ## Frequently asked questions
 
 **Which routers does it work with?**
-MikroTik RouterOS, connected over the API and through RADIUS. Hotspot and
-PPPoE are both supported, and a secure tunnel reaches routers behind CGNAT.
+MikroTik RouterOS for your network, connected over the API and through
+RADIUS. Hotspot and PPPoE are both supported, and a secure tunnel reaches
+routers behind CGNAT. For customers' homes, the router management add-on works
+with fibre routers that support TR-069.
 
 **How do M-Pesa payments work?**
 Subscribers pay via STK push or paybill. The payment is matched to the account
@@ -137,10 +181,21 @@ MikroTik, RADIUS, vouchers, SMS and WhatsApp work anywhere. Ask us about
 your market at sales@sparo.run.
 
 **Is there a free trial?**
-Yes. 30 days on any plan, no card. There is no activation fee during the trial.
+Yes. 14 days on any plan, no card. There is no activation fee during the trial.
 
 **Is there a mobile app?**
-Yes, an Android app for operators. It is the same account as the web dashboard.
+Three Android apps: Sparo for operators (the same account as the web
+dashboard), My ISP for your customers, and Sparo CPE for the staff who manage
+customers' routers.
+
+**Can my customers renew from their phone?**
+Yes. My ISP shows their days left and renews by M-Pesa, in your name and
+colours, and the same is available as a web portal for anyone without the app.
+
+**Can I change a customer's WiFi password remotely?**
+Yes, with the router management add-on: set a new WiFi name and password
+from the dashboard or Sparo CPE while the customer is on the line. It reaches
+the router within about five minutes, and the password is never stored.
 
 **Is the source code open?**
 No. Sparo ISP Billing is a hosted service. This repository exists so operators
@@ -175,6 +230,12 @@ router that flag devices doing it. See
 - [Manage MikroTik routers remotely, behind CGNAT](https://sparo.run/blog/manage-mikrotik-routers-remotely)
 - [Free internet apps on your hotspot: what DNS tunnelling is and how to spot it](https://sparo.run/blog/free-internet-apps-dns-tunnelling-hotspot)
 - [PPPoE account sharing: stopping one login from running two connections](https://sparo.run/blog/stop-pppoe-account-sharing)
+- [Give your customers an app - without building one](https://sparo.run/blog/a-customer-app-for-your-subscribers)
+- [Your portal, on your own domain](https://sparo.run/blog/your-portal-on-your-own-domain)
+- [Night bundles: sell cheap overnight WiFi without giving away the day](https://sparo.run/blog/night-bundles-on-your-hotspot)
+- [Why is this customer offline? Ask the router](https://sparo.run/blog/sparo-ops-manage-customer-fibre-routers)
+- [TR-069 for home internet: better WiFi for your customers, fewer site visits for you](https://sparo.run/blog/tr-069-better-home-wifi-fewer-site-visits)
+- [Outage compensation: give customers their time back without the argument](https://sparo.run/blog/outage-compensation)
 
 ---
 
